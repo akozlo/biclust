@@ -5,13 +5,14 @@
 #
 # Calling the C Code from the bimax.c file.
 
-cbimax<- function(logicalmatrix,minr=2,minc=2,number=100,er=0)
-   .C("bimax",
+cbimax<- function(logicalmatrix,minr=2,minc=2,maxc=3,number=100,er=0)
+   .C64("bimax",SIGNATURE=rep("int64",11),
    as.integer(logicalmatrix),
    as.integer(nrow(logicalmatrix)),
    as.integer(ncol(logicalmatrix)),
    as.integer(minr),
    as.integer(minc),
+   as.integer(maxc),
    as.integer(matrix(0,nrow=nrow(logicalmatrix),ncol=number)),
    as.integer(matrix(0,nrow=number,ncol=ncol(logicalmatrix))),
    as.integer(vector(mode="integer",length=nrow(logicalmatrix)+ncol(logicalmatrix))),

@@ -64,6 +64,7 @@ int   noRows;
 int   noColumns;
 int   minNoRows;
 int   minNoColumns;
+int   maxNoColumns;
 int   maxLevels;
 row_t  *rows = NULL;
 cs_t   *consideredColumns = NULL;

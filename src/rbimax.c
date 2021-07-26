@@ -302,6 +302,7 @@ void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int 
     intersectColumnSets(consideredColumns[level], rows[splitRow].columnSet,
 			consideredColumns[level + 1L]);
     if (columnCount(consideredColumns[level + 1L]) >= minNoColumns &&
+	columnCount(consideredColumns[level + 1L]) <= maxNoColumns &&
 	containsMandatoryColumns(consideredColumns[level + 1L], noMandatorySets)) {
       noSelectedRows = selectRows(firstRow, lastRow, level + 1L, &overlapping);
       if (noSelectedRows >= minNoRows)
@@ -394,6 +395,7 @@ void  bimax(int * datenmatrix, int * nr, int * nc,int * minnr, int * minnc, int 
 /*  noRows = *nr;
   noColumns = *nc;
   minNoRows = *minnr;
+  maxNoColumns = *maxnc;
   minNoColumns = *minnc;*/
 
   biclusterCounter = 0; // przemek
@@ -403,6 +405,8 @@ void  bimax(int * datenmatrix, int * nr, int * nc,int * minnr, int * minnc, int 
     noColumns = *nc;
      //fflush(stdin);
     minNoRows = *minnr;
+     //fflush(stdin);
+    maxNoColumns = *maxnc;
      //fflush(stdin);
     minNoColumns = *minnc;
      //fflush(stdin);

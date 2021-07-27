@@ -391,7 +391,7 @@ void  readInDataMatrix(int * daten)
   }
 } /* readInDataMatrix */
 
-void  bimax(int * datenmatrix, int * nr, int * nc,int * minnr, int * minnc, int * maxnc, int * x, int * y, int * z,int * anzahl,int * er)
+void  bimax(int * datenmatrix, int * nr, int * nc,int * minnr, int * minnc, int * x, int * y, int * z,int * anzahl,int * er, int * maxnc)
 {
 /*  noRows = *nr;
   noColumns = *nc;

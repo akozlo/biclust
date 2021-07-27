@@ -44,7 +44,7 @@ BiclustResult <- function(mypara, a, b, c, d) {
 setClass('BCBimax',
          contains = 'BiclustMethod',
          prototype = prototype(
-           biclustFunction = function(x,minr=2,minc=2,number=100){bimaxbiclust(x,minr,minc,number)}))
+           biclustFunction = function(x,minr=2,minc=2,maxc=3,number=100){bimaxbiclust(x,minr,minc,maxc,number)}))
 
 BCBimax <- function() {
   return(new('BCBimax'))

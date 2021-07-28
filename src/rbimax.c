@@ -295,8 +295,8 @@ void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int 
     return;  
   
   determineColumnsInCommon(firstRow, lastRow, columnIntersection);
-  if ((compareColumns(columnIntersection, consideredColumns[level],
-		     consideredColumns[level]) == -1) && columnCount(consideredColumns[level]) <= maxNoColumns)
+  if (compareColumns(columnIntersection, consideredColumns[level],
+		     consideredColumns[level]) == -1)
     writeBicluster(firstRow, lastRow, columnIntersection,x,y,z,anzahl,er);
   else {
     splitRow = chooseSplitRow(firstRow, lastRow, level);
@@ -305,7 +305,7 @@ void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int 
     if (columnCount(consideredColumns[level + 1L]) >= minNoColumns &&
 	containsMandatoryColumns(consideredColumns[level + 1L], noMandatorySets)) {
       noSelectedRows = selectRows(firstRow, lastRow, level + 1L, &overlapping);
-      if ((noSelectedRows >= minNoRows)) /*&& columnCount(consideredColumns[level + 1L]) <= maxNoColumns)*/
+      if ((noSelectedRows >= minNoRows) && columnCount(consideredColumns[level]) <= maxNoColumns && columnCount(consideredColumns[level]) >= minNoColumns)
 	conquer(firstRow, firstRow + noSelectedRows - 1L, level + 1L, noMandatorySets,x,y,z,anzahl,er);
     }
     copyColumnSet(consideredColumns[level + 1L], consideredColumns[level + 1L],

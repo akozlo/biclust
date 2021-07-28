@@ -302,7 +302,7 @@ void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int 
     splitRow = chooseSplitRow(firstRow, lastRow, level);
     intersectColumnSets(consideredColumns[level], rows[splitRow].columnSet,
 			consideredColumns[level + 1L]);
-    if (columnCount(consideredColumns[level + 1L]) >= minNoColumns &&
+    if (columnCount(consideredColumns[level + 1L]) <= minNoColumns &&
 	containsMandatoryColumns(consideredColumns[level + 1L], noMandatorySets)) {
       noSelectedRows = selectRows(firstRow, lastRow, level + 1L, &overlapping);
       if ((noSelectedRows >= minNoRows)) /*&& columnCount(consideredColumns[level + 1L]) <= maxNoColumns)*/

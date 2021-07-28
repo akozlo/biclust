@@ -295,14 +295,14 @@ void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int 
     return;  
   
   determineColumnsInCommon(firstRow, lastRow, columnIntersection);
-  if (compareColumns(columnIntersection, consideredColumns[level],
-		     consideredColumns[level]) == -1)
+  if ((compareColumns(columnIntersection, consideredColumns[level],
+		     consideredColumns[level]) == -1) && columnCount(consideredColumns[level]) <= maxNoColumns)
     writeBicluster(firstRow, lastRow, columnIntersection,x,y,z,anzahl,er);
   else {
     splitRow = chooseSplitRow(firstRow, lastRow, level);
     intersectColumnSets(consideredColumns[level], rows[splitRow].columnSet,
 			consideredColumns[level + 1L]);
-    if (columnCount(consideredColumns[level + 1L]) == minNoColumns &&
+    if (columnCount(consideredColumns[level + 1L]) >= minNoColumns &&
 	containsMandatoryColumns(consideredColumns[level + 1L], noMandatorySets)) {
       noSelectedRows = selectRows(firstRow, lastRow, level + 1L, &overlapping);
       if ((noSelectedRows >= minNoRows)) /*&& columnCount(consideredColumns[level + 1L]) <= maxNoColumns)*/

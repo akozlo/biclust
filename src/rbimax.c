@@ -255,7 +255,7 @@ int  selectRows(int  firstRow, int  lastRow, int  level, int  *overlapping)
   return selected;
 } /* selectRows */
 
-void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int * y, int * z,int * anzahl,int * er)
+void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int * y, int * z,int * anzahl,int * er, int  level)
 {
   //static int  biclusterCounter = 0; // przemek
 
@@ -299,7 +299,7 @@ void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int 
   determineColumnsInCommon(firstRow, lastRow, columnIntersection);
   if (compareColumns(columnIntersection, consideredColumns[level],
 		     consideredColumns[level]) == -1)
-    writeBicluster(firstRow, lastRow, columnIntersection,x,y,z,anzahl,er);
+    writeBicluster(firstRow, lastRow, columnIntersection,x,y,z,anzahl,er,level);
   else {
     splitRow = chooseSplitRow(firstRow, lastRow, level);
     intersectColumnSets(consideredColumns[level], rows[splitRow].columnSet,

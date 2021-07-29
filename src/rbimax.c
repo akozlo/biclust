@@ -262,6 +262,7 @@ void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int 
   int  i;
   int a;
   a = *anzahl;
+  if(columnCount(consideredColumns[level]) <= maxNoColumns){
   biclusterCounter++;
   if (biclusterCounter>a) {
       *er = 1;
@@ -286,6 +287,7 @@ void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int 
       z[noRows+i]+=pow(2,(biclusterCounter-1));*/    
   /*printf("\n");*/
 } /* writeBicluster */
+} /* I added this one*/
 
 void  conquer(int  firstRow, int  lastRow, int  level, int noMandatorySets, int * x, int * y, int * z,int * anzahl,int * er)
 {

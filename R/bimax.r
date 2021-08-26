@@ -12,9 +12,9 @@ cbimax<- function(logicalmatrix,minr=2,minc=2,maxc=3,number=100,er=0)
    as.integer(ncol(logicalmatrix)),
    as.integer(minr),
    as.integer(minc),
-   as.integer(matrix(0,nrow=nrow(logicalmatrix),ncol=number)),
-   as.integer(matrix(0,nrow=number,ncol=ncol(logicalmatrix))),
-   as.integer(vector(mode="integer",length=nrow(logicalmatrix)+ncol(logicalmatrix))),
+   as.integer64(matrix(0,nrow=nrow(logicalmatrix),ncol=number)),
+   as.integer64(matrix(0,nrow=number,ncol=ncol(logicalmatrix))),
+   as.integer64(vector(mode="integer",length=nrow(logicalmatrix)+ncol(logicalmatrix))),
    as.integer(number),
    as.integer(er),
    as.integer(maxc))

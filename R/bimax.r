@@ -6,7 +6,7 @@
 # Calling the C Code from the bimax.c file.
 
 cbimax<- function(logicalmatrix,minr=2,minc=2,maxc=3,number=100,er=0)
-   .C64("bimax",SIGNATURE=rep("int",11),
+   .C("bimax",
    as.integer(logicalmatrix),
    as.integer(nrow(logicalmatrix)),
    as.integer(ncol(logicalmatrix)),

@@ -9,7 +9,7 @@
 extern void bimax(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 
 static const R_CMethodDef CEntries[] = {
-    {"bimax", (DL_FUNC) &bimax, 10},
+    {"bimax", (DL_FUNC) &bimax, 11},
     {NULL, NULL, 0}
 };
 

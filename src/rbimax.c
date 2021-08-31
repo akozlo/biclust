@@ -259,10 +259,11 @@ void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int 
 {
   //static int  biclusterCounter = 0; // przemek
 	
-  if(columnCount(consideredColumns[level]) <= maxNoColumns){
   int  i;
   int a;
   a = *anzahl;
+  if(columnCount(consideredColumns[level]) <= maxNoColumns){
+
   biclusterCounter++;
   if (biclusterCounter>a) {
       *er = 1;

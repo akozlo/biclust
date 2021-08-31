@@ -263,7 +263,6 @@ void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int 
   int a;
   a = *anzahl;
   if(columnCount(consideredColumns[level]) <= maxNoColumns){
-
   biclusterCounter++;
   if (biclusterCounter>a) {
       *er = 1;

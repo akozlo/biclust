@@ -399,7 +399,7 @@ void  bimax(int * datenmatrix, int * nr, int * nc,int * minnr, int * minnc, int 
   maxNoColumns = *maxnc;
   minNoColumns = *minnc;*/
 
-  biclusterCounter = 0; // przemek
+  //biclusterCounter = 0; // przemek
 
   noRows = *nr;
      //fflush(stdin);

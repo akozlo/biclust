@@ -60,7 +60,6 @@ int          bitsPerBV;
 int          noBVs;
 bitvector_t  bitMaskLastBV;
 
-int noSelectedRows;
 int   noRows;
 int   noColumns;
 int   minNoRows;
@@ -262,7 +261,7 @@ void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int 
   int  i;
   int a;
   a = *anzahl;
-  if((columnCount(consideredColumns[level]) <= maxNoColumns) && (noSelectedRows >= minNoRows)){
+  if((columnCount(consideredColumns[level]) <= maxNoColumns) && (lastRow > firstRow)){
   biclusterCounter++;
   if (biclusterCounter>a) {
       *er = 1;

@@ -60,6 +60,7 @@ int          bitsPerBV;
 int          noBVs;
 bitvector_t  bitMaskLastBV;
 
+int noSelectedRows;
 int   noRows;
 int   noColumns;
 int   minNoRows;
@@ -258,7 +259,6 @@ int  selectRows(int  firstRow, int  lastRow, int  level, int  *overlapping)
 void  writeBicluster(int  firstRow, int  lastRow, cs_t  columnSet, int * x, int * y, int * z,int * anzahl,int * er, int  level)
 {
   //static int  biclusterCounter = 0; // przemek
-  int noSelectedRows;
   int  i;
   int a;
   a = *anzahl;
